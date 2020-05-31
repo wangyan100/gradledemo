@@ -10,12 +10,13 @@ def greeting={ person, age->
 	    println (person+', happy '+age+'th birthday !')
 }
 
-// define method use closure with param
+// define method to use the defined closure
 def exec(Closure closure , String person, String age ){
 	closure(person,age)
 }
 
-// gradle run -Pperson=Yan -Page=30
+// call gradle task with from cammadline 
+// e.g gradle run -Pperson=Yan -Page=30
 task run(){
 	if (project.hasProperty("person")&project.hasProperty("age")){
 		exec(greeting,  project.getProperty('person') , project.getProperty('age'))
