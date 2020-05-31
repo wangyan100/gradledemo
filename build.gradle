@@ -6,16 +6,21 @@
  */
 
 // define a closure with param
-def greeting={ name, age-> 
-	    println (name+', happy '+age+'th birthday !')
+def greeting={ person, age-> 
+	    println (person+', happy '+age+'th birthday !')
 }
 
 // define method use closure with param
-def exec(Closure closure , String name, String age ){
-	closure(name,age)
+def exec(Closure closure , String person, String age ){
+	closure(person,age)
 }
 
-
+// gradle run -Pperson=Yan -Page=30
 task run(){
-	exec(greeting, 'Yan' ,'25')
+	if (project.hasProperty("person")&project.hasProperty("age")){
+		exec(greeting,  project.getProperty('person') , project.getProperty('age'))
+	}else{
+		exec(greeting, 'Yan' ,'25')
+	}
+	
 }
