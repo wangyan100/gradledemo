@@ -37,5 +37,5 @@ This demo shows you how to use closure in gradle project
 
 - Run below command, as you can see, it works! 
 
-![Screenshot 2020-05-31 at 11.06.46](README.assets/Screenshot 2020-05-31 at 11.06.46-0917115.png)
+![Screenshot1](README.assets/Screenshot1.png)
 
